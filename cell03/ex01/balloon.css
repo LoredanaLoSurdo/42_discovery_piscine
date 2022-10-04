@@ -1,0 +1,13 @@
+body {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+}
+#balloon {
+    background-color: rgb(255, 0, 0);
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+

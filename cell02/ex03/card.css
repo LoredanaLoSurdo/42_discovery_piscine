@@ -1,0 +1,54 @@
+.card {
+    padding: 20px;
+    border-radius: 20px;
+}
+
+table {
+    background-color: whitesmoke;
+}
+td {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 12px;
+}
+
+body {
+    background-color: lightpink;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+}
+
+thead{
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact{
+    color:white;
+    background-color: black;
+}
+
+.contact td {
+    border-radius: 15px;
+}
+
+a{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-decoration: none;
+
+}
+
+a:visited{
+    color:inherit;
+}
+
+.icons img {
+    padding: 5px;  
+}
+
+.photo img{
+height: 300px;
+}

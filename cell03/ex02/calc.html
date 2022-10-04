@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10%;
+            background-color:rgb(213, 201, 248);
+            
+        }
+
+        .calcField{
+            display: flex;
+            justify-content: space-around;
+            width: 50%;
+        }
+        .selection {
+           position: relative;
+           cursor: pointer;
+        }
+        
+        .selection:hover
+        {
+            
+        }
+        .selectionContent{
+            display: none;
+            position: absolute;
+            background-color: rgb(253, 253, 222);
+            padding 12px 16px
+            z-index; 1;
+        }
+        
+        .selection:hover .selectionContent {
+            display: block;
+        }
+
+        .drop {
+            display: inline;
+            cursor: pointer;
+        }
+
+           .button {
+            background-color: rgb(253, 253, 222);
+            padding: 15px;
+            margin-top: 50px;
+            cursor: pointer;
+            color:rgb(213, 201, 248);
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .button:hover {
+            background-color: rgb(255, 255, 209);
+            font-family: inherit
+        }
+        
+        span{
+            color:white;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 10px;
+            background-color:rgb(194, 175, 252);
+            border: 4px solid;
+            border-color:rgb(183, 162, 245);
+            border-radius: 10px;
+        }
+
+        span:hover{
+            color:rgb(246, 242, 255);
+        }
+
+        #summand1{
+            border:none;
+            height: 55px;
+            width: 80px;
+            background-color: rgb(252, 252, 241);
+            border-radius: 5px;
+            text-align: center;
+        }
+        #summand2{
+            border:none;
+            height: 55px;
+            width: 80px;
+            background-color: rgb(252, 252, 241);
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="calcField">
+    <input type="text" id="summand1"></input>
+    <div class="selection">
+        <span id="options">Select Operator</span>
+            <div class="selectionContent">
+                <div class="drop" id="plusSign" onclick="selectOperator('+')">+</div>
+                <div class="drop" id="minusSign" onclick="selectOperator('-')">-</div>
+                <div class="drop" id="divideSign" onclick="selectOperator('/')">/</div>
+                <div class="drop" id="MultiplySign" onclick="selectOperator('*')">*</div>
+                <div class="drop" id="ModulusSign" onclick="selectOperator('%')">%</div>
+            </div>
+        </div>
+        <input type="text" id="summand2"></input>
+    </div>
+    <output type="text" id="sum"></output>
+    <div class="button" id="calc" onclick="calculation()">Try me!</div>
+</body>
+<script>
+
+    function selectOperator(op) 
+    {
+        document.getElementById("options").textContent = op;
+    }
+
+    function calculation()
+    {
+        var value1 = parseFloat(document.getElementById("summand1").value);
+        var value2 = parseFloat(document.getElementById("summand2").value);
+        var calc = document.getElementById("sum");
+        var op = document.getElementById("options").textContent;
+        switch(op)
+        {
+            case "+":
+                calc.value = value1 + value2;
+                break;
+            case "-":
+                calc.value = value1 - value2;
+                break;
+            case "/":
+                calc.value = value1 / value2;
+                break;
+            case "*":
+                calc.value = value1 * value2;
+                break;
+            case "%":
+                calc.value = value1 % value2;
+                break;
+            default:
+            calc.value = "Calculation invalid."
+        }
+        if (isNaN(value1) || isNaN(value2) || value1 < 0 || value2 < 0
+            || !Number.isInteger(value1) || !Number.isInteger(value2))
+            calc.value = "Error :(";
+        if ((op == "/" || op == "%") && value2 == 0)
+            calc.value = "It's over 9000!"
+            alert(calc.value);
+            console.log(calc.value);
+    }
+    function periodicAlert()
+    {
+        alert("Please, use me...")
+    }
+    
+    setInterval(periodicAlert, 30000);
+    </script>
+</html>

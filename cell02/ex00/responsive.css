@@ -1,0 +1,23 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100vh;
+}
+td {
+    border: 1px solid black;
+    padding: 50px 100px;
+}
+
+td:nth-child(1) {
+    background-color: pink;
+
+}
+
+td:nth-child(2) {
+    background-color: lavender
+    
+}
+
+div {
+    overflow-x: auto;
+}
